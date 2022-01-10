@@ -61,10 +61,10 @@ class Snake(Turtle):
     def collision(self):
         collided = False
 
-        for num in range(1, len(self.snake_body) - 1):
-            if self.snake_head.distance(self.snake_body[num]) <= 10:
+        # Flags if snake head collides with any part of its body
+        for part in self.snake_body[1:]:
+            if self.snake_head.distance(part.position()) <= 10:
                 collided = True
-                print("Collide")
 
         return collided
 
